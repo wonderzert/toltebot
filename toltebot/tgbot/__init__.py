@@ -20,14 +20,14 @@ def search(query):
             '<a href="' + \
             "https://wonderzent.pythonanywhere.com/static/toltebot/" + \
             urllib.parse.quote(filepath) + "#L" + linenum + \
-            '>' + os.path.basename(filepath) + '</a>'
+            '">' + os.path.basename(filepath) + '</a>'
 
         tgresult_obj = {
             "type": "article",
             "id": filepath[0:32] + linenum,
             "title": match_text,
             "input_message_content": {
-                "message_text": urllib.parse.quote(link_template + ': ' + match_text),
+                "message_text": link_template + ': ' + match_text,
                 "parse_mode": "html"
             }
         }
