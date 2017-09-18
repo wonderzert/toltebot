@@ -53,10 +53,11 @@ def handle_update(update):
             "results": json.dumps(search_result),
             "next_offset": offset + 10
         }
-        requests.post( \
+        r = requests.post( \
         "https://api.telegram.org/bot403483963:AAFDfy0wV3oq7mpYwCE51EKU7bVbyWjIVsk/" \
         + answer_command["method"], answer_command)
         print(answer_command)
+        print(r)
         return ""
     except Exception:
         print("exception")
