@@ -18,7 +18,7 @@ def search(query):
 
         link_template = \
             '<a href="' + \
-            "https://wonderzent.pythonanywhere.com/static/toltebot/" + \
+            "https://nagualchat.github.io/" + \
             urllib.parse.quote(filepath) + "#L" + linenum + \
             '">' + os.path.basename(filepath) + '</a>'
 
