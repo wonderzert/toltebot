@@ -25,13 +25,15 @@ SECRET_KEY = 'e(4pgz*41t45re5$m87^r5qgt!!a%#n_t$bs^wf8t12^tvw(ra'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "wonderzent.pythonanywhere.com"
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
