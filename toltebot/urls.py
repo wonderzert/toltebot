@@ -19,5 +19,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^403483963:AAHizkzb7dY2jsx0ZcDxjvC6MralP80Dp74$', views.toltebot, name='toltebot'),
+    url(r'^403483963:AAFDfy0wV3oq7mpYwCE51EKU7bVbyWjIVsk$', views.toltebot, name='toltebot'),
 ]

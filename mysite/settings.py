@@ -26,7 +26,8 @@ SECRET_KEY = 'e(4pgz*41t45re5$m87^r5qgt!!a%#n_t$bs^wf8t12^tvw(ra'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "wonderzent.pythonanywhere.com"
+    "wonderzent.pythonanywhere.com",
+    "localhost"
 ]
 
 
