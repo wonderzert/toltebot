@@ -5,7 +5,8 @@ import os
 max_found = 500
 
 def search_in_files(file_list, pattern):
-    pattern = '([<]p id[=]["]L([0-9]+)["] class[=]["]text["][>])' + '(.*' + pattern + '.*)' + '[<]'
+    pattern = '([<]p id[=]["]L([0-9]+)["] class[=]["]text["][>])' + \
+        '([ ]*.*[ ]*' + pattern + '[ ]*.*[ ]*)' + '[<]'
     found_list = []
     # print(pattern)
     for filepath in file_list:
