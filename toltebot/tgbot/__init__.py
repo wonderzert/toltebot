@@ -39,7 +39,7 @@ def search(query):
 def handle_update(update):
     # print(update)
     update = json.loads(update, encoding="utf8")
-    print("handling update")
+    # print("handling update")
     # print(update)
     # try:
     query = update['inline_query']['query']
@@ -59,9 +59,9 @@ def handle_update(update):
     r = requests.post( \
     "https://api.telegram.org/bot403483963:AAFDfy0wV3oq7mpYwCE51EKU7bVbyWjIVsk/" \
     + answer_command["method"], answer_command)
-    print(answer_command)
-    print(r.text)
-    return json.dumps(answer_command)
+    # print(answer_command)
+    # print(r.text)
+    return "ok"
     # except Exception:
         # print("exception")
         # pass

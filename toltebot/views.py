@@ -11,7 +11,7 @@ def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 
 def toltebot(request):
-    print(request.body)
+    # print(request.body)
     ans = tgbot.handle_update(request.body)
     if (ans):
         return HttpResponse(ans)
