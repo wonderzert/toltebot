@@ -25,7 +25,8 @@ def search(query):
         tgresult_obj = {
             "type": "article",
             "id": filepath[0:32] + linenum,
-            "title": match_text,
+            "title": os.path.basename(filepath),
+            "description": match_text,
             "input_message_content": {
                 "message_text": link_template + ': ' + match_text,
                 "parse_mode": "html"
