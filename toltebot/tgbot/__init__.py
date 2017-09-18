@@ -35,7 +35,7 @@ def search(query):
 
 def handle_update(update):
     # print(update)
-    update = json.loads(update)
+    update = json.loads(update, encoding="utf8")
     print("handling update")
     # print(update)
     try:
