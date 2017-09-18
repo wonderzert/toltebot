@@ -12,7 +12,7 @@ def search(query):
     for s in search_results:
         filepath, match = s
         filepath = os.path.relpath(filepath, text.filelist.textpath)
-        print(match)
+        # print(match)
         linenum = match[1]
         match_text = match[2]
 
@@ -61,7 +61,7 @@ def handle_update(update):
     + answer_command["method"], answer_command)
     # print(answer_command)
     # print(r.text)
-    return "ok"
+    return json.dumps(answer_command)
     # except Exception:
         # print("exception")
         # pass
