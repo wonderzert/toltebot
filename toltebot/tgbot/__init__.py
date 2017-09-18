@@ -57,7 +57,7 @@ def handle_update(update):
         "https://api.telegram.org/bot403483963:AAFDfy0wV3oq7mpYwCE51EKU7bVbyWjIVsk/" \
         + answer_command["method"], answer_command)
         print(answer_command)
-        print(r.raw)
+        print(r.text)
         return ""
     except Exception:
         print("exception")
