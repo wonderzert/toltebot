@@ -50,13 +50,14 @@ def handle_update(update):
         answer_command = {
             "method": "answerInlineQuery",
             "inline_query_id": update['inline_query']['id'],
-            "results": urllib.parse.quote(json.dumps(search_result)),
+            "results": json.dumps(search_result),
             "next_offset": offset + 10
         }
         requests.post( \
         "https://api.telegram.org/bot403483963:AAFDfy0wV3oq7mpYwCE51EKU7bVbyWjIVsk/" \
         + answer_command["method"], answer_command)
-        return json.dumps(answer_command)
+        print(answer_command)
+        return ""
     except Exception:
         print("exception")
         pass
