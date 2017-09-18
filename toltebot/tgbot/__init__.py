@@ -49,7 +49,7 @@ def handle_update(update):
     except Exception:
         pass
     search_result = search(query)
-    search_result = search_result[offset:5]
+    search_result = search_result[offset:(offset + 5)]
     answer_command = {
         "method": "answerInlineQuery",
         "inline_query_id": update['inline_query']['id'],
