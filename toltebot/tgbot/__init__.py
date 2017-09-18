@@ -27,7 +27,7 @@ def search(query):
             "id": filepath[0:32] + linenum,
             "title": match_text,
             "input_message_content": {
-                "message_text": link_template + ': ' + match_text,
+                "message_text": urllib.parse.quote(link_template + ': ' + match_text),
                 "parse_mode": "html"
             }
         }
@@ -40,28 +40,28 @@ def handle_update(update):
     update = json.loads(update, encoding="utf8")
     print("handling update")
     # print(update)
+    # try:
+    query = update['inline_query']['query']
+    offset = 0
     try:
-        query = update['inline_query']['query']
-        offset = 0
-        try:
-            offset = int(update['inline_query']['offset'])
-        except Exception:
-            pass
-        search_result = search(query)
-        search_result = search_result[offset:10]
-        answer_command = {
-            "method": "answerInlineQuery",
-            "inline_query_id": update['inline_query']['id'],
-            "results": json.dumps(search_result),
-            "next_offset": offset + 10
-        }
-        r = requests.post( \
-        "https://api.telegram.org/bot403483963:AAFDfy0wV3oq7mpYwCE51EKU7bVbyWjIVsk/" \
-        + answer_command["method"], answer_command)
-        print(answer_command)
-        print(r.text)
-        return ""
+        offset = int(update['inline_query']['offset'])
     except Exception:
-        print("exception")
         pass
+    search_result = search(query)
+    search_result = search_result[offset:10]
+    answer_command = {
+        "method": "answerInlineQuery",
+        "inline_query_id": update['inline_query']['id'],
+        "results": json.dumps(search_result),
+        "next_offset": offset + 10
+    }
+    r = requests.post( \
+    "https://api.telegram.org/bot403483963:AAFDfy0wV3oq7mpYwCE51EKU7bVbyWjIVsk/" \
+    + answer_command["method"], answer_command)
+    print(answer_command)
+    print(r.text)
+    return json.dumps(answer_command)
+    # except Exception:
+        # print("exception")
+        # pass
     return None
