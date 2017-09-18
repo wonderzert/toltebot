@@ -2,6 +2,7 @@ from . import text
 import json
 import os
 import urllib
+import requests
 
 def search(query):
     search_results = text.search.search_in_files(text.filelist.file_list, query)
@@ -53,6 +54,9 @@ def handle_update(update):
             "next_offset": offset + 10
         }
         return json.dumps(answer_command)
+    requests.post(
+        "https://api.telegram.org/bot403483963:AAFDfy0wV3oq7mpYwCE51EKU7bVbyWjIVsk/" \
+        + answer_command["method"], answer_command)
     except Exception:
         print("exception")
         pass
